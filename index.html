@@ -363,11 +363,22 @@
         <p class="eyebrow eyebrow--light">Contact</p>
         <h2>Let's work together.</h2>
         <p class="contact__copy">If you're looking for someone who values professionalism, clear communication, and dependable support, I'd love the opportunity to learn more about your team.</p>
-        <div class="contact__actions">
-          <a class="btn btn--white" href="mailto:jennyfaye.alipen@gmail.com?subject=Interview%20Request%20%E2%80%94%20Jenny%20Faye%20Alipen">Schedule an Interview</a>
-          <a class="btn btn--outline" href="assets/Jenny-Faye-Alipen-Resume.pdf" download>Download Resume</a>
-        </div>
-        <p class="contact__email">or email me directly at <a href="mailto:jennyfaye.alipen@gmail.com">jennyfaye.alipen@gmail.com</a></p>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="contact-form__row">
+            <label class="sr-only" for="cfName">Your name</label>
+            <input id="cfName" name="name" type="text" placeholder="Your name" required>
+            <label class="sr-only" for="cfEmail">Your email</label>
+            <input id="cfEmail" name="email" type="email" placeholder="Your email" required>
+          </div>
+          <label class="sr-only" for="cfCompany">Company</label>
+          <input id="cfCompany" name="company" type="text" placeholder="Company (optional)">
+          <input class="contact-form__hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label class="sr-only" for="cfMessage">Message</label>
+          <textarea id="cfMessage" name="message" rows="5" placeholder="Tell me about the role or your team…" required></textarea>
+          <button class="btn btn--primary contact-form__submit" type="submit">Send Message</button>
+          <p class="contact-form__status" id="contactStatus" role="status" aria-live="polite"></p>
+        </form>
+        <p class="contact__email">Prefer email? <a href="mailto:jennyfaye.alipen@gmail.com">jennyfaye.alipen@gmail.com</a> &nbsp;·&nbsp; <a href="assets/Jenny-Faye-Alipen-Resume.pdf" download>Download my resume</a></p>
       </div>
     </section>
 

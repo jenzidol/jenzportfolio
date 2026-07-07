@@ -71,3 +71,45 @@ const statObserver = new IntersectionObserver(
   { threshold: 0.5 }
 );
 document.querySelectorAll('.stat__num').forEach((el) => statObserver.observe(el));
+
+// Contact form → POST /api/contact (Cloudflare Pages Function)
+const form = document.getElementById('contactForm');
+const status = document.getElementById('contactStatus');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const submitBtn = form.querySelector('.contact-form__submit');
+  status.className = 'contact-form__status';
+
+  const payload = Object.fromEntries(new FormData(form));
+  if (!payload.name.trim() || !payload.email.trim() || !payload.message.trim()) {
+    status.textContent = 'Please fill in your name, email, and message.';
+    status.classList.add('is-error');
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const result = await res.json();
+    if (result.ok) {
+      form.reset();
+      status.textContent = "Thank you! Your message is on its way — I'll get back to you soon.";
+      status.classList.add('is-ok');
+    } else {
+      throw new Error(result.error);
+    }
+  } catch (err) {
+    status.textContent =
+      (err && err.message && !err.message.includes('fetch') ? err.message : '') ||
+      'Something went wrong. Please email me directly at jennyfaye.alipen@gmail.com.';
+    status.classList.add('is-error');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Message';
+  }
+});

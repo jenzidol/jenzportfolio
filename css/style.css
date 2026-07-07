@@ -582,13 +582,77 @@ a { color: var(--pink); text-decoration: none; }
   margin: 0 auto 38px;
   font-size: 1.075rem;
 }
-.contact__actions {
+/* Contact form */
+.contact-form {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lift);
+  padding: 34px 32px 30px;
+  max-width: 580px;
+  margin: 0 auto 26px;
+  text-align: left;
   display: flex;
+  flex-direction: column;
   gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 26px;
 }
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--font-body);
+  font-size: 0.975rem;
+  color: var(--ink);
+  background: var(--gray-light);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  width: 100%;
+  transition: border-color 0.2s, background 0.2s;
+  resize: vertical;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: var(--gray); }
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  background: var(--white);
+  border-color: var(--pink);
+}
+.contact-form__hp {
+  position: absolute !important;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+.contact-form__submit { width: 100%; }
+.contact-form__submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+.contact-form__status {
+  display: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+}
+.contact-form__status.is-ok { display: block; color: #1E9E5A; }
+.contact-form__status.is-error { display: block; color: var(--pink-dark); }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .contact__email {
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.925rem;
@@ -679,6 +743,7 @@ a { color: var(--pink); text-decoration: none; }
 @media (max-width: 480px) {
   body { font-size: 1rem; }
   .hero__actions .btn { width: 100%; }
-  .contact__actions .btn { width: 100%; }
+  .contact-form { padding: 26px 20px 24px; }
+  .contact-form__row { grid-template-columns: 1fr; }
   .about__values { grid-template-columns: 1fr; }
 }
