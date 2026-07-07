@@ -18,12 +18,15 @@
   <meta name="twitter:image" content="https://jennyalipen.com/assets/jenny.jpg">
   <link rel="icon" type="image/png" href="assets/logo-mark.png">
   <link rel="apple-touch-icon" href="assets/logo-mark.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://api.fontshare.com">
   <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Fonts load async (media swap) so text renders immediately with system fallbacks -->
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </noscript>
   <link rel="stylesheet" href="css/style.css?v=4">
   <script type="application/ld+json">
   {
@@ -53,7 +56,7 @@
   <!-- ======= NAV ======= -->
   <header class="nav" id="top">
     <div class="container nav__inner">
-      <a href="#top" class="nav__logo"><img src="assets/logo-mark.png" alt="JA monogram" class="nav__logo-mark" width="34" height="34">Jenny<span>.</span></a>
+      <a href="#top" class="nav__logo"><img src="assets/logo-mark-64.png" alt="JA monogram" class="nav__logo-mark" width="34" height="34">Jenny<span>.</span></a>
       <nav class="nav__links" id="navLinks" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#expertise">Expertise</a>

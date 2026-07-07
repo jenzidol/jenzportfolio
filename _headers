@@ -1,0 +1,15 @@
+# Cloudflare Pages cache policy
+# Images/PDF are content-addressed by name; CSS/JS are version-busted with ?v=
+# (always bump the ?v= query in index.html when editing css/js)
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.png
+  Cache-Control: public, max-age=86400
