@@ -137,6 +137,9 @@ a { color: var(--pink); text-decoration: none; }
   height: 72px;
 }
 .nav__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.35rem;
@@ -144,6 +147,11 @@ a { color: var(--pink); text-decoration: none; }
   letter-spacing: -0.02em;
 }
 .nav__logo span { color: var(--pink); }
+.nav__logo-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
 .nav__links {
   display: flex;
   gap: 28px;
@@ -325,7 +333,7 @@ a { color: var(--pink); text-decoration: none; }
   gap: 72px;
   align-items: center;
 }
-.about__media {
+.about__media-frame {
   border-radius: var(--radius);
   overflow: hidden;
 }
@@ -440,6 +448,30 @@ a { color: var(--pink); text-decoration: none; }
 .timeline__body h3 { font-weight: 600; margin-bottom: 6px; }
 .timeline__body h3 span { color: var(--gray); font-weight: 500; }
 .timeline__body p { font-size: 0.95rem; max-width: 640px; }
+
+/* ---------- Beyond the Desk gallery ---------- */
+.about__media figcaption,
+.gallery__item figcaption {
+  font-size: 0.85rem;
+  color: var(--gray);
+  padding: 12px 4px 0;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 20px;
+  align-items: start;
+}
+.gallery__item {
+  border-radius: var(--radius);
+}
+.gallery__item img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
 
 /* ---------- Industries ---------- */
 .industries {
@@ -684,6 +716,11 @@ a { color: var(--pink); text-decoration: none; }
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.85rem;
 }
+.footer__tagline {
+  color: var(--pink-soft) !important;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
 
 /* ---------- Entrance states (driven by Motion in js/main.js) ----------
    Elements are pre-hidden only when JS is running; .no-motion restores
@@ -754,6 +791,8 @@ a { color: var(--pink); text-decoration: none; }
   .about__grid { grid-template-columns: 1fr; gap: 40px; }
   .about__media { max-width: 340px; }
   .testimonials { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr; }
+  .gallery__item img { height: 300px; }
   .timeline__item { grid-template-columns: 1fr; gap: 6px; padding: 22px 0; }
 }
 

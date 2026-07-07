@@ -10,7 +10,8 @@
   <meta property="og:description" content="Helping businesses deliver exceptional customer experiences while keeping operations organized, efficient, and dependable.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/jenny.jpg">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23E91E63'/%3E%3Ctext x='50' y='66' font-size='48' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" href="assets/logo-mark.png">
+  <link rel="apple-touch-icon" href="assets/logo-mark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
@@ -30,7 +31,7 @@
   <!-- ======= NAV ======= -->
   <header class="nav" id="top">
     <div class="container nav__inner">
-      <a href="#top" class="nav__logo">Jenny<span>.</span></a>
+      <a href="#top" class="nav__logo"><img src="assets/logo-mark.png" alt="JA monogram" class="nav__logo-mark">Jenny<span>.</span></a>
       <nav class="nav__links" id="navLinks">
         <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
@@ -105,9 +106,12 @@
     <!-- ======= ABOUT ======= -->
     <section class="section about" id="about">
       <div class="container about__grid">
-        <div class="about__media reveal">
-          <img src="assets/jenny.jpg" alt="Jenny Faye Alipen" loading="lazy">
-        </div>
+        <figure class="about__media reveal">
+          <div class="about__media-frame">
+            <img src="assets/jenny-conference.jpg" alt="Jenny Faye Alipen at the Property Management Systems Workshop in Las Vegas" loading="lazy">
+          </div>
+          <figcaption>Representing my employer at a US property management industry conference</figcaption>
+        </figure>
         <div class="about__content reveal reveal--delay">
           <p class="eyebrow">About Me</p>
           <h2>A decade of showing up for customers — and the teams behind them.</h2>
@@ -260,8 +264,29 @@
       </div>
     </section>
 
+    <!-- ======= BEYOND THE DESK ======= -->
+    <section class="section" id="moments">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Beyond the Desk</p>
+          <h2>Remote — but never distant.</h2>
+          <p>Working remotely has never meant working at arm's length. I've represented my employer at US industry conferences and celebrated the wins with my teams in person.</p>
+        </div>
+        <div class="gallery" data-stagger>
+          <figure class="gallery__item">
+            <img src="assets/team-vegas.jpg" alt="Jenny with teammates in Las Vegas during a conference trip" loading="lazy">
+            <figcaption>With teammates in Las Vegas during a conference trip</figcaption>
+          </figure>
+          <figure class="gallery__item gallery__item--wide">
+            <img src="assets/team-dinner.jpg" alt="Jenny celebrating at a team dinner with colleagues" loading="lazy">
+            <figcaption>Celebrating with the whole team</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- ======= INDUSTRIES ======= -->
-    <section class="section" id="industries">
+    <section class="section section--alt" id="industries">
       <div class="container">
         <div class="section__head reveal">
           <p class="eyebrow">Industries</p>
@@ -280,7 +305,7 @@
     </section>
 
     <!-- ======= TESTIMONIALS ======= -->
-    <section class="section section--alt" id="testimonials">
+    <section class="section" id="testimonials">
       <div class="container">
         <div class="section__head reveal">
           <p class="eyebrow">Client Feedback</p>
@@ -314,7 +339,7 @@
     </section>
 
     <!-- ======= WHY ME ======= -->
-    <section class="section" id="why">
+    <section class="section section--alt" id="why">
       <div class="container">
         <div class="section__head reveal">
           <p class="eyebrow">Why Work With Me</p>
@@ -334,7 +359,7 @@
     </section>
 
     <!-- ======= FAQ ======= -->
-    <section class="section section--alt" id="faq">
+    <section class="section" id="faq">
       <div class="container container--narrow">
         <div class="section__head reveal">
           <p class="eyebrow">FAQs</p>
@@ -396,6 +421,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <p>© <span id="year"></span> Jenny Faye Alipen · Customer Success &amp; Operations Specialist</p>
+      <p class="footer__tagline">People · Process · Purpose</p>
       <p>Iloilo City, Philippines · Working remotely, worldwide</p>
     </div>
   </footer>
