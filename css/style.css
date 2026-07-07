@@ -88,6 +88,7 @@ a { color: var(--pink); text-decoration: none; }
   white-space: nowrap;
 }
 .btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0) scale(0.98); transition-duration: 0.1s; }
 .btn--sm { padding: 10px 22px; font-size: 0.9rem; }
 
 .btn--primary {
@@ -323,6 +324,10 @@ a { color: var(--pink); text-decoration: none; }
   grid-template-columns: 0.8fr 1.2fr;
   gap: 72px;
   align-items: center;
+}
+.about__media {
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 .about__media img {
   border-radius: var(--radius);
@@ -680,21 +685,33 @@ a { color: var(--pink); text-decoration: none; }
   font-size: 0.85rem;
 }
 
-/* ---------- Reveal animations ---------- */
-.reveal {
+/* ---------- Entrance states (driven by Motion in js/main.js) ----------
+   Elements are pre-hidden only when JS is running; .no-motion restores
+   everything instantly (reduced motion, old browsers, CDN failure). */
+.js .reveal,
+.js [data-stagger] > *,
+.js [data-hero],
+.js [data-hero-photo],
+.js [data-hero-badge] {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
 }
-.reveal--delay { transition-delay: 0.15s; }
-.reveal.is-visible {
+.js.no-motion .reveal,
+.js.no-motion [data-stagger] > *,
+.js.no-motion [data-hero],
+.js.no-motion [data-hero-photo],
+.js.no-motion [data-hero-badge] {
   opacity: 1;
-  transform: translateY(0);
 }
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .js .reveal,
+  .js [data-stagger] > *,
+  .js [data-hero],
+  .js [data-hero-photo],
+  .js [data-hero-badge] { opacity: 1; }
   .hero__badge { animation: none; }
+  .nav__status .dot { animation: none; }
   html { scroll-behavior: auto; }
+  .btn, .card, .industry { transition: none; }
 }
 
 /* ---------- Responsive ---------- */

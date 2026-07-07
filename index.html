@@ -16,6 +16,14 @@
   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Marks JS availability for entrance-animation pre-hiding.
+    // If the Motion module fails to load, restore full visibility.
+    document.documentElement.classList.add('js');
+    setTimeout(function () {
+      if (!window.__motionOK) document.documentElement.classList.add('no-motion');
+    }, 2500);
+  </script>
 </head>
 <body>
 
@@ -46,24 +54,24 @@
     <!-- ======= HERO ======= -->
     <section class="hero">
       <div class="container hero__grid">
-        <div class="hero__content reveal">
-          <p class="hero__hello">Hello! I'm Jenny Faye Alipen 👋</p>
-          <h1 class="hero__title">Helping businesses deliver <em>exceptional customer experiences</em>.</h1>
-          <p class="hero__sub">Customer Success &amp; Operations Specialist with 10+ years of experience supporting businesses through customer service, operations, administrative support, and client relationship management.</p>
-          <div class="hero__actions">
+        <div class="hero__content">
+          <p class="hero__hello" data-hero>Hello! I'm Jenny Faye Alipen 👋</p>
+          <h1 class="hero__title" data-hero>Helping businesses deliver <em>exceptional customer experiences</em>.</h1>
+          <p class="hero__sub" data-hero>Customer Success &amp; Operations Specialist with 10+ years of experience supporting businesses through customer service, operations, administrative support, and client relationship management.</p>
+          <div class="hero__actions" data-hero>
             <a class="btn btn--primary" href="mailto:jennyfaye.alipen@gmail.com?subject=Interview%20Request%20%E2%80%94%20Jenny%20Faye%20Alipen">Schedule an Interview</a>
             <a class="btn btn--ghost" href="assets/Jenny-Faye-Alipen-Resume.pdf" download>Download Resume</a>
           </div>
-          <p class="hero__meta">📍 Iloilo City, Philippines &nbsp;·&nbsp; Remote — flexible across time zones</p>
+          <p class="hero__meta" data-hero>📍 Iloilo City, Philippines &nbsp;·&nbsp; Remote — flexible across time zones</p>
         </div>
-        <div class="hero__portrait reveal reveal--delay">
-          <div class="hero__photo-wrap">
+        <div class="hero__portrait">
+          <div class="hero__photo-wrap" data-hero-photo>
             <img src="assets/jenny.jpg" alt="Jenny Faye Alipen, Customer Success & Operations Specialist" width="480" height="600">
-            <div class="hero__badge">
+            <div class="hero__badge" data-hero-badge>
               <span class="hero__badge-num">10+</span>
               <span class="hero__badge-label">Years of remote<br>experience</span>
             </div>
-            <div class="hero__badge hero__badge--rating">
+            <div class="hero__badge hero__badge--rating" data-hero-badge>
               <span class="hero__badge-stars">★★★★★</span>
               <span class="hero__badge-label">5.0 client rating<br>on Upwork</span>
             </div>
@@ -123,7 +131,7 @@
           <p class="eyebrow">What I Do</p>
           <h2>Expertise that keeps customers happy and operations moving.</h2>
         </div>
-        <div class="cards reveal">
+        <div class="cards" data-stagger>
           <article class="card">
             <div class="card__icon">💬</div>
             <h3>Customer Success</h3>
@@ -170,7 +178,7 @@
           <p class="eyebrow">How I Work</p>
           <h2>A simple, dependable way of working.</h2>
         </div>
-        <div class="process reveal">
+        <div class="process" data-stagger>
           <div class="process__step">
             <span class="process__num">01</span>
             <h3>Listen &amp; Understand</h3>
@@ -202,7 +210,7 @@
           <p class="eyebrow">Career Highlights</p>
           <h2>Where I've worked.</h2>
         </div>
-        <div class="timeline reveal">
+        <div class="timeline" data-stagger>
           <div class="timeline__item">
             <div class="timeline__period">2025 — 2026</div>
             <div class="timeline__body">
@@ -259,7 +267,7 @@
           <p class="eyebrow">Industries</p>
           <h2>Comfortable across many worlds.</h2>
         </div>
-        <div class="industries reveal">
+        <div class="industries" data-stagger>
           <div class="industry"><span>🛒</span>E-commerce</div>
           <div class="industry"><span>🏘️</span>Property Management</div>
           <div class="industry"><span>🩺</span>Healthcare</div>
@@ -278,7 +286,7 @@
           <p class="eyebrow">Client Feedback</p>
           <h2>What clients say about working with me.</h2>
         </div>
-        <div class="testimonials reveal">
+        <div class="testimonials" data-stagger>
           <figure class="testimonial">
             <div class="testimonial__stars">★★★★★ <span>5.0</span></div>
             <blockquote>
@@ -312,7 +320,7 @@
           <p class="eyebrow">Why Work With Me</p>
           <h2>The qualities you can count on.</h2>
         </div>
-        <div class="chips reveal">
+        <div class="chips" data-stagger>
           <span class="chip">Reliable</span>
           <span class="chip">Professional</span>
           <span class="chip">Strong Communicator</span>
@@ -332,7 +340,7 @@
           <p class="eyebrow">FAQs</p>
           <h2>Questions you might have.</h2>
         </div>
-        <div class="faq reveal">
+        <div class="faq" data-stagger>
           <details class="faq__item" open>
             <summary>What roles are you looking for?</summary>
             <p>Remote roles in customer success, customer support, customer retention, operations, administrative support, or property management assistance. I'm equally comfortable as a dedicated specialist or a flexible all-rounder.</p>
@@ -392,6 +400,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
