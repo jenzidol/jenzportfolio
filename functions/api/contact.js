@@ -34,7 +34,7 @@ export async function onRequestPost({ request, env }) {
     return json({ ok: false, error: 'The contact form is not configured yet. Please email me directly.' }, 503);
   }
 
-  const to = env.CONTACT_TO_EMAIL || 'jennyalipenworks@gmail.com';
+  const to = env.CONTACT_TO_EMAIL || 'jennyfaye.alipen@gmail.com';
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {

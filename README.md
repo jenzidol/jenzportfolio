@@ -47,7 +47,7 @@ The contact form posts to `/api/contact`, a Cloudflare Pages Function
 ([functions/api/contact.js](functions/api/contact.js)) that emails submissions
 via [Resend](https://resend.com). One-time setup:
 
-1. Sign up at resend.com **using jennyalipenworks@gmail.com** — the address
+1. Sign up at resend.com **using jennyfaye.alipen@gmail.com** — the address
    form submissions are delivered to. (On the free tier without a verified
    domain, Resend only delivers to the account owner's own address — signing
    up with the destination Gmail makes it work immediately, no domain needed.)
