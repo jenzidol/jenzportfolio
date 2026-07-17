@@ -602,10 +602,8 @@ a { color: var(--pink); text-decoration: none; }
 
 /* ---------- Testimonials ---------- */
 .testimonials {
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 20px;
-  align-items: start;
+  columns: 2;
+  column-gap: 20px;
 }
 .testimonial {
   background: var(--white);
@@ -613,6 +611,8 @@ a { color: var(--pink); text-decoration: none; }
   border-radius: var(--radius);
   padding: 38px 36px;
   box-shadow: var(--shadow);
+  break-inside: avoid;
+  margin-bottom: 20px;
 }
 .testimonial__stars {
   color: #F5A623;
@@ -896,7 +896,7 @@ a { color: var(--pink); text-decoration: none; }
   .stats__grid { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; }
   .about__grid { grid-template-columns: 1fr; gap: 40px; }
   .about__media { max-width: 340px; }
-  .testimonials { grid-template-columns: 1fr; }
+  .testimonials { columns: 1; }
   .gallery { grid-template-columns: 1fr; }
   .gallery__item img { height: 300px; }
   .timeline__item { grid-template-columns: 1fr; gap: 6px; padding: 22px 0; }
