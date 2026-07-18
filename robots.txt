@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jennyalipen.com/sitemap.xml
